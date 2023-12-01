@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function ()
 {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
-    Route::get('/create',[HomeController::class,'index'])->name('create');
+    Route::get('/',[HomeController::class,'index'])->name('create');
     Route::get('/home',[HomeController::class,'home'])->name('homepage');
 
     Route::resources(['products'=>ProductController::class]);
